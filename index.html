@@ -1,63 +1,70 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>What is Motion Graphics?</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Motion Graphics — Interactive Introduction</title>
 <style>
-:root{--bg:#f6f6f3;--ink:#161616;--muted:#777;--line:#deded8;--card:#fff;--orange:#f47b52;--blue:#5b7cff;--yellow:#e5bf55;--pink:#d977a8;--cyan:#55a9ad}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-button{font:inherit}.wrap{max-width:1160px;margin:auto;padding:28px 30px 55px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:45px}.brand{font-weight:800;letter-spacing:-.04em}.counter{font-size:12px;color:var(--muted)}
-.screen{display:none}.screen.active{display:block}.intro{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center;min-height:600px}
-.eyebrow{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
-h1{font-size:clamp(50px,7vw,86px);line-height:.9;letter-spacing:-.065em;margin:0 0 25px;max-width:650px}h2{font-size:38px;line-height:1;letter-spacing:-.05em;margin:0 0 14px}
-p{font-size:17px;line-height:1.55;color:#5d5d5d;max-width:570px}.cta{margin-top:22px;border:0;border-radius:12px;padding:14px 19px;background:var(--ink);color:#fff;font-weight:750;cursor:pointer}
-.stage{height:480px;background:#fff;border:1px solid var(--line);border-radius:28px;position:relative;overflow:hidden}.stage:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#ededeb 1px,transparent 1px),linear-gradient(90deg,#ededeb 1px,transparent 1px);background-size:38px 38px}
-.core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:185px;height:185px;border-radius:45px;display:flex;align-items:center;justify-content:center;background:var(--ink);color:#fff;font-weight:800;font-size:24px;letter-spacing:-.04em;animation:breathe 3s ease-in-out infinite}
-.dot{position:absolute;width:28px;height:28px;border-radius:50%;animation:orbit 5s linear infinite}.d1{background:var(--orange);left:18%;top:25%}.d2{background:var(--blue);right:18%;top:30%;animation-delay:-1.4s}.d3{background:var(--yellow);right:22%;bottom:18%;animation-delay:-2.7s}.d4{background:var(--pink);left:18%;bottom:20%;animation-delay:-3.8s}
-@keyframes breathe{50%{transform:translate(-50%,-50%) scale(1.04) rotate(-2deg)}}@keyframes orbit{50%{transform:translate(45px,-25px) rotate(90deg)}}
-.sectionHead{display:flex;justify-content:space-between;align-items:end;margin-bottom:28px}.hint{font-size:13px;color:var(--muted)}
-.map{display:grid;grid-template-columns:1fr 1fr;gap:16px}.domain{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;min-height:190px;text-align:left;cursor:pointer;position:relative;overflow:hidden;transition:.2s}.domain:hover{transform:translateY(-2px);border-color:#aaa}.domain.active{border:2px solid var(--ink);padding:23px}
-.num{font-size:12px;color:var(--muted);font-weight:800}.domain h3{font-size:24px;letter-spacing:-.035em;margin:24px 0 8px}.domain p{font-size:14px;margin:0;max-width:430px}.mark{position:absolute;right:20px;top:20px;width:48px;height:48px;border-radius:14px}.m1{background:var(--orange)}.m2{background:var(--blue);border-radius:50%}.m3{background:var(--yellow);transform:rotate(45deg);width:36px;height:36px;right:27px;top:27px}.m4{background:var(--pink);height:18px;top:34px;border-radius:20px}.m5{background:var(--cyan);clip-path:polygon(0 0,100% 0,70% 100%,0 70%)}
-.detail{margin-top:18px;background:var(--ink);color:#fff;border-radius:22px;padding:25px;display:none;min-height:130px}.detail.show{display:flex;justify-content:space-between;gap:30px;align-items:center}.detail h3{margin:0 0 8px;font-size:25px;letter-spacing:-.03em}.detail p{color:#c8c8c8;margin:0;font-size:14px}.mini{width:250px;height:90px;border:1px solid #444;border-radius:14px;position:relative;overflow:hidden;flex:none}.mini span{position:absolute;display:block}.mini .bar{height:12px;background:#fff;width:55%;left:12%;top:24px}.mini .circle{width:35px;height:35px;border-radius:50%;background:var(--orange);right:17%;bottom:14px;animation:miniMove 1.8s ease-in-out infinite alternate}.mini .line{height:2px;background:#777;width:75%;left:12%;bottom:18px}@keyframes miniMove{to{transform:translateX(-55px) scale(1.2)}}
-.end{text-align:center;max-width:850px;margin:110px auto 0}.end h2{font-size:55px}.end p{margin:0 auto;font-size:18px}.back{margin-top:22px;border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 17px;cursor:pointer}
-@media(max-width:800px){.intro{grid-template-columns:1fr}.stage{height:330px}.map{grid-template-columns:1fr}.detail.show{flex-direction:column;align-items:flex-start}.mini{width:100%}.end{margin-top:70px}}
+:root{--bg:#f5f5f2;--ink:#151515;--muted:#727272;--line:#deded8;--white:#fff;--orange:#f17850;--blue:#5b78e8;--yellow:#d9b64b;--pink:#c879a1;--cyan:#55a7a5;--violet:#8a78c7}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button{font:inherit}
+.wrap{max-width:1180px;margin:auto;padding:30px 32px 48px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:34px}.brand{font-size:13px;font-weight:800;letter-spacing:.08em}.step{font-size:12px;color:var(--muted)}
+.screen{display:none}.screen.active{display:block}
+.hero{display:grid;grid-template-columns:1fr .95fr;gap:54px;align-items:center;min-height:650px}.eyebrow{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+h1{font-size:clamp(52px,7.2vw,88px);line-height:.88;letter-spacing:-.065em;margin:0 0 25px}h2{font-size:44px;line-height:.95;letter-spacing:-.055em;margin:0 0 15px}p{font-size:17px;line-height:1.55;color:#595959;max-width:590px}.cta{margin-top:22px;background:var(--ink);color:#fff;border:0;border-radius:12px;padding:14px 19px;font-weight:750;cursor:pointer}
+.canvas{height:510px;background:#fff;border:1px solid var(--line);border-radius:28px;position:relative;overflow:hidden}.grid{position:absolute;inset:0;background-image:linear-gradient(#ececea 1px,transparent 1px),linear-gradient(90deg,#ececea 1px,transparent 1px);background-size:40px 40px}
+.word{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:31px;font-weight:850;letter-spacing:-.06em;white-space:nowrap;animation:pulse 2.8s ease-in-out infinite}.shape{position:absolute}.s1{width:72px;height:72px;border-radius:20px;background:var(--orange);left:15%;top:18%;animation:move1 4s ease-in-out infinite}.s2{width:48px;height:48px;border-radius:50%;background:var(--blue);right:18%;top:24%;animation:move2 3.5s ease-in-out infinite}.s3{width:110px;height:18px;border-radius:20px;background:var(--yellow);right:14%;bottom:22%;transform:rotate(-17deg);animation:move3 3.8s ease-in-out infinite}.s4{width:36px;height:36px;background:var(--pink);left:18%;bottom:20%;transform:rotate(45deg);animation:move4 4.5s ease-in-out infinite}
+@keyframes pulse{50%{transform:translate(-50%,-50%) scale(1.08);letter-spacing:-.02em}}@keyframes move1{50%{transform:translate(85px,55px) rotate(100deg)}}@keyframes move2{50%{transform:translate(-70px,65px)}}@keyframes move3{50%{transform:translate(-80px,-35px) rotate(20deg)}}@keyframes move4{50%{transform:translate(60px,-55px) rotate(180deg)}}
+.definition{margin-top:20px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);max-width:590px}
+.header{display:flex;justify-content:space-between;align-items:end;margin:35px 0 25px}.hint{font-size:13px;color:var(--muted)}
+.fields{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.field{min-height:185px;text-align:left;background:var(--white);border:1px solid var(--line);border-radius:20px;padding:22px;cursor:pointer;position:relative;overflow:hidden;transition:.18s}.field:hover{transform:translateY(-2px);border-color:#aaa}.field.selected{border:2px solid var(--ink);padding:21px}.num{font-size:11px;font-weight:800;color:var(--muted)}.icon{position:absolute;right:20px;top:20px;width:45px;height:45px;border-radius:14px}.i1{background:var(--orange)}.i2{background:var(--blue);border-radius:50%}.i3{background:var(--yellow);transform:rotate(45deg);width:34px;height:34px;right:25px;top:25px}.i4{background:var(--pink);height:17px;top:34px;border-radius:20px}.i5{background:var(--cyan);clip-path:polygon(0 0,100% 0,72% 100%,0 72%)}.i6{background:var(--violet);border-radius:50% 50% 12px 12px}.field h3{font-size:21px;letter-spacing:-.035em;margin:27px 0 8px}.field p{font-size:13px;line-height:1.4;margin:0;max-width:300px}
+.detail{display:none;margin-top:16px;background:var(--ink);color:#fff;border-radius:20px;padding:24px 26px;min-height:142px;align-items:center;justify-content:space-between;gap:28px}.detail.show{display:flex}.detail .copy h3{font-size:24px;margin:0 0 7px;letter-spacing:-.03em}.detail .copy p{font-size:14px;color:#c9c9c9;margin:0;max-width:690px}.demo{width:230px;height:86px;border:1px solid #444;border-radius:14px;position:relative;overflow:hidden;flex:none}.demo span{position:absolute}.demo .dbar{width:55%;height:9px;background:#fff;left:12%;top:24px}.demo .dcircle{width:28px;height:28px;border-radius:50%;background:var(--orange);right:16%;bottom:15px;animation:demo 1.5s ease-in-out infinite alternate}.demo .dline{width:72%;height:2px;background:#777;left:12%;bottom:17px}@keyframes demo{to{transform:translateX(-55px) scale(1.25)}}
+.continue{display:none}.continue.show{display:inline-block}.note{margin-top:18px;font-size:11px;color:var(--muted);line-height:1.5}
+.final{max-width:900px;margin:120px auto 0}.final h2{font-size:58px}.final p{font-size:19px}.pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:25px}.pill{padding:9px 12px;border:1px solid var(--line);border-radius:99px;background:#fff;font-size:13px}.back{margin-top:25px;border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 16px;cursor:pointer}
+@media(max-width:800px){.hero{grid-template-columns:1fr}.canvas{height:350px}.fields{grid-template-columns:1fr}.detail.show{align-items:flex-start;flex-direction:column}.demo{width:100%}.final{margin-top:70px}.final h2{font-size:43px}}
 </style>
 </head>
 <body>
 <main class="wrap">
-<header class="top"><div class="brand">MOTION GRAPHICS</div><div class="counter" id="counter">01 / 03</div></header>
+<header class="top"><div class="brand">MOTION GRAPHICS</div><div class="step" id="step">01 / 03</div></header>
 
-<section class="screen active" id="s1">
-<div class="intro">
-<div><div class="eyebrow">A short interactive introduction</div><h1>What is<br>motion graphics?</h1><p>Motion graphics brings <b>graphic design</b> into time and space. Typography, shapes, images and sound can move to organise attention, communicate information and create meaning.</p><button class="cta" id="begin">Explore →</button></div>
-<div class="stage"><div class="dot d1"></div><div class="dot d2"></div><div class="dot d3"></div><div class="dot d4"></div><div class="core">GRAPHICS<br>+ MOTION</div></div>
+<section class="screen active" id="screen1">
+<div class="hero">
+<div>
+<div class="eyebrow">Interactive introduction</div>
+<h1>What is<br>motion graphics?</h1>
+<p>Motion graphics is the design of <b>graphic elements over time</b>. Typography, shapes, images, logos and information are animated to communicate, explain, identify or guide attention.</p>
+<button class="cta" id="start">Explore motion →</button>
+<div class="definition">A concise working definition based on established motion-graphics literature: graphical elements are choreographed over time to convey information.</div>
+</div>
+<div class="canvas"><div class="grid"></div><div class="shape s1"></div><div class="shape s2"></div><div class="shape s3"></div><div class="shape s4"></div><div class="word">GRAPHIC DESIGN → TIME</div></div>
 </div>
 </section>
 
-<section class="screen" id="s2">
-<div class="sectionHead"><div><div class="eyebrow">Step 02 · Explore</div><h2>Where does it appear?</h2></div><div class="hint">Click a field to see the connection.</div></div>
-<div class="map">
-<button class="domain" data-title="Branding & identity" data-text="Animated logos, identity systems and brand expressions use motion to extend a visual identity beyond a static image." data-mark="m1"><span class="num">01</span><div class="mark m1"></div><h3>Branding & identity</h3><p>Visual identity systems that move.</p></button>
-<button class="domain" data-title="Advertising & social media" data-text="Short-form campaigns use motion, typography and visual effects to attract attention and communicate a message across digital platforms." data-mark="m2"><span class="num">02</span><div class="mark m2"></div><h3>Advertising & social media</h3><p>Campaigns designed for attention and engagement.</p></button>
-<button class="domain" data-title="Film & broadcast" data-text="Titles, opening sequences, transitions and broadcast graphics combine graphic design with time-based storytelling." data-mark="m3"><span class="num">03</span><div class="mark m3"></div><h3>Film & broadcast</h3><p>Titles, transitions and screen graphics.</p></button>
-<button class="domain" data-title="UI & digital interfaces" data-text="Interface motion helps users understand state, hierarchy and interaction through transitions, feedback and animated elements." data-mark="m4"><span class="num">04</span><div class="mark m4"></div><h3>UI & digital interfaces</h3><p>Motion that explains interaction and change.</p></button>
-<button class="domain" data-title="Information & data visualisation" data-text="Animated diagrams, maps and data visualisations reveal change over time and help audiences understand complex information." data-mark="m5"><span class="num">05</span><div class="mark m5"></div><h3>Information & data visualisation</h3><p>Making information visible through time.</p></button>
+<section class="screen" id="screen2">
+<div class="header"><div><div class="eyebrow">Interactive map</div><h2>Where is motion graphics used?</h2></div><div class="hint">Select any field.</div></div>
+<div class="fields">
+<button class="field" data-title="Film & television" data-text="Title sequences, opening credits, screen graphics and other designed moving elements support film and television communication." ><span class="num">01</span><span class="icon i1"></span><h3>Film & television</h3><p>Titles, opening sequences and screen graphics.</p></button>
+<button class="field" data-title="Broadcast & live media" data-text="Broadcast packages include news graphics, lower thirds, transitions, channel identities and live-event screen graphics." ><span class="num">02</span><span class="icon i2"></span><h3>Broadcast & live media</h3><p>News, sports, channel identity and live graphics.</p></button>
+<button class="field" data-title="Advertising & branded content" data-text="Commercial motion graphics animate brand messages, products, typography and visual identities for advertising and branded communication." ><span class="num">03</span><span class="icon i3"></span><h3>Advertising & branded content</h3><p>Campaigns, product communication and brand stories.</p></button>
+<button class="field" data-title="Information & data visualisation" data-text="Charts, diagrams, maps and explanatory graphics can use motion to reveal change, relationships and complex information over time." ><span class="num">04</span><span class="icon i4"></span><h3>Information & data visualisation</h3><p>Explaining information through time and movement.</p></button>
+<button class="field" data-title="Digital products & interfaces" data-text="Interface motion includes transitions, feedback, loading states and other animated UI elements that help users understand interaction and system state." ><span class="num">05</span><span class="icon i5"></span><h3>Digital products & interfaces</h3><p>UI motion, interaction and digital experiences.</p></button>
+<button class="field" data-title="Brand identity & visual systems" data-text="Animated logos, idents and motion identity systems extend a visual identity into time-based and screen-based communication." ><span class="num">06</span><span class="icon i6"></span><h3>Brand identity & visual systems</h3><p>Logos, idents and identity systems in motion.</p></button>
 </div>
-<div class="detail" id="detail"><div><h3 id="detailTitle"></h3><p id="detailText"></p></div><div class="mini"><span class="bar"></span><span class="circle"></span><span class="line"></span></div></div>
-<button class="cta" id="next" style="margin-top:22px;display:none">See the idea →</button>
+<div class="detail" id="detail"><div class="copy"><h3 id="detailTitle"></h3><p id="detailText"></p></div><div class="demo"><span class="dbar"></span><span class="dcircle"></span><span class="dline"></span></div></div>
+<button class="cta continue" id="continue">So what connects them? →</button>
+<div class="note">These are presented as common application areas rather than a single universal taxonomy. Industry and academic sources use overlapping categories and terminology.</div>
 </section>
 
-<section class="screen" id="s3">
-<div class="end"><div class="eyebrow">Step 03 · The idea</div><h2>It is not one field.<br>It is an intersection.</h2><p>Motion graphics sits between <b>graphic design, animation, film, digital media and communication</b>. What makes it distinctive is the use of <b>time and movement</b> as part of visual communication.</p><button class="back" id="restart">Explore again</button></div>
+<section class="screen" id="screen3">
+<div class="final"><div class="eyebrow">The common ground</div><h2>Different fields.<br>One time-based language.</h2><p>Across these applications, motion graphics combines <b>graphic design, animation, information design and audiovisual communication</b>. The defining addition is <b>time</b>: visual elements can appear, transform, move, sequence and respond.</p><div class="pillrow"><span class="pill">Graphic design</span><span class="pill">Animation</span><span class="pill">Typography</span><span class="pill">Information design</span><span class="pill">Audiovisual media</span><span class="pill">Digital interaction</span></div><button class="back" id="again">Start again</button></div>
 </section>
 </main>
 <script>
-const screens=[1,2,3];function go(n){screens.forEach(i=>document.getElementById('s'+i).classList.toggle('active',i===n));document.getElementById('counter').textContent=String(n).padStart(2,'0')+' / 03'}
-document.getElementById('begin').onclick=()=>go(2);
-const domains=[...document.querySelectorAll('.domain')],detail=document.getElementById('detail');
-domains.forEach(d=>d.onclick=()=>{domains.forEach(x=>x.classList.remove('active'));d.classList.add('active');document.getElementById('detailTitle').textContent=d.dataset.title;document.getElementById('detailText').textContent=d.dataset.text;detail.classList.add('show');document.getElementById('next').style.display='inline-block'});
-document.getElementById('next').onclick=()=>go(3);document.getElementById('restart').onclick=()=>{domains.forEach(x=>x.classList.remove('active'));detail.classList.remove('show');document.getElementById('next').style.display='none';go(1)};
+const screens=[1,2,3];function go(n){screens.forEach(i=>document.getElementById('screen'+i).classList.toggle('active',i===n));document.getElementById('step').textContent=String(n).padStart(2,'0')+' / 03';window.scrollTo({top:0,behavior:'smooth'})}
+document.getElementById('start').onclick=()=>go(2);
+const fields=[...document.querySelectorAll('.field')],detail=document.getElementById('detail'),cont=document.getElementById('continue');
+fields.forEach(f=>f.onclick=()=>{fields.forEach(x=>x.classList.remove('selected'));f.classList.add('selected');document.getElementById('detailTitle').textContent=f.dataset.title;document.getElementById('detailText').textContent=f.dataset.text;detail.classList.add('show');cont.classList.add('show')});
+cont.onclick=()=>go(3);
+document.getElementById('again').onclick=()=>{fields.forEach(x=>x.classList.remove('selected'));detail.classList.remove('show');cont.classList.remove('show');go(1)};
 </script>
 </body>
 </html>
